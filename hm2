@@ -1,0 +1,142 @@
+import java.util.Scanner;
+
+//Задание 1
+public class DZ1 {
+
+    public static void main(String[] args) {
+        int number = 0;
+        int min = 1;
+        int max = 100;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите целое число");
+        int num = scanner.nextInt();
+        do  {
+            int avg = (min + max) / 2;
+            scanner = new Scanner(System.in);
+            System.out.println("Число равно " + avg + "? (0 - нет, 1 -да)");
+            int answer = scanner.nextInt();
+
+            if (answer == 0) {
+                scanner = new Scanner(System.in);
+                System.out.println("Число больше " + avg + "? (0 - нет, 1 -да)");
+                int bolshe = scanner.nextInt();
+                if (bolshe == 0){
+                    max = avg - 1;
+                }
+                else
+                    min = avg + 1;
+            }
+                else {
+                System.out.println("Число угадано");
+                number = 1;}
+
+        }while (number != 1);
+    }
+}
+
+
+//Задание 2
+public class DZ2 {
+    public static void main(String[] args) {
+        System.out.println("2");
+
+      for (int i = 1; i < 19; i++) {
+          int posled = 2;
+          int povtor = 0;
+          do {
+              posled = posled*2;
+              povtor = povtor + 1;
+          } while (povtor != i);
+          System.out.println(posled );
+      }
+    }
+}
+
+//Задание 3
+public class DZ3 {
+    public static void main(String[] args) {
+        int chislo = 90;
+        while (chislo >= 0){
+            System.out.println(chislo);
+            chislo = chislo - 5;
+        }
+    }
+}
+
+//Задание 4
+public class DZ4 {
+    public static void main(String[] args) {
+        int min = 10;
+        int max = 500;
+        int a = (int) ( Math.random() * (max-min) ) + min;
+        System.out.println(a);
+
+        if (a > 25 && a < 200) {
+            System.out.println("Число входит в промежуток");
+
+        }
+        else {
+            System.out.println("Число не входит в промежуток");
+        }
+        }
+    }
+
+//Задание 5
+import java.util.Scanner;
+
+public class DZ5 {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите номер билета");
+        int num = scanner.nextInt();
+        switch (num) {
+            case 111:
+            case 222:
+            case 333:
+                System.out.println("Ваш приз - книга");
+                break;
+            case 444:
+            case 555:
+                System.out.println("Ваш приз - телефон");
+                break;
+            case 777:
+                System.out.println("Ваш приз - ноутбук");
+                break;
+            default:
+                System.out.println("Ваш приз - ничего");
+        }
+        }
+    }
+
+//Задание 6
+import java.util.Scanner;
+
+public class DZ6 {
+    public static void main(String[] args) {
+        int min = 1;
+        int max = 9;
+        int a = (int) (Math.random() * (max - min)) + min;
+        int number = 0;
+
+
+        while (number != 1) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Угадайте число (от 1 до 9)/ 0 - чтобы выйти из программы");
+            int answer = scanner.nextInt();
+            {
+                if (answer == a) {
+                    System.out.println("Верно!");
+                    number = 1;
+                } else if (answer > a) {
+                    System.out.println("Загаданное число меньше");
+                } else if (a > answer && answer > 0) {
+                    System.out.println("Загаданное число больше");
+                } else if (answer == 0) {
+                    System.out.println("Выход из программы");
+                    number = 1;
+                }
+            }
+        }
+    }
+}
